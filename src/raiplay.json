@@ -1,0 +1,147 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Default title",
+        "description": "RaiPlay boradcasting schedule",
+        "version": "1.0"
+    },
+    "host": "www.raiplay.it",
+    "basePath": "/palinsesto/app/",
+    "schemes": [
+        "https"
+    ],
+    "consumes": [],
+    "produces": [],
+    "paths": {
+        "/{channel_id}/{day}.json": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "default",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "events": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "name": {
+                                                "type": "string",
+                                                "description": "name",
+                                                "title": "Episode name"
+                                            },
+                                            "episode_title": {
+                                                "type": "string",
+                                                "description": "episode_title",
+                                                "title": "Episode title"
+                                            },
+                                            "episode": {
+                                                "type": "string",
+                                                "description": "episode",
+                                                "title": "Episode"
+                                            },
+                                            "season": {
+                                                "type": "string",
+                                                "description": "season",
+                                                "title": "Season"
+                                            },
+                                            "description": {
+                                                "type": "string",
+                                                "description": "description",
+                                                "title": "Description"
+                                            },
+                                            "channel": {
+                                                "type": "string",
+                                                "description": "channel",
+                                                "title": "Channel"
+                                            },
+                                            "date": {
+                                                "type": "string",
+                                                "description": "date",
+                                                "title": "Date"
+                                            },
+                                            "hour": {
+                                                "type": "string",
+                                                "description": "hour",
+                                                "title": "Time"
+                                            },
+                                            "duration": {
+                                                "type": "string",
+                                                "description": "duration",
+                                                "title": "Duration"
+                                            },
+                                            "image": {
+                                                "type": "string",
+                                                "description": "image",
+                                                "title": "Image"
+                                            },
+                                            "program": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "name": {
+                                                        "type": "string",
+                                                        "description": "name",
+                                                        "title": "Program name"
+                                                    }
+                                                },
+                                                "description": "program"
+                                            }
+                                        }
+                                    },
+                                    "description": "events"
+                                }
+                            }
+                        }
+                    }
+                },
+                "operationId": "BroadcastingSchedule-Get",
+                "summary": "Get the broadcasting schedule",
+                "description": "Get the broadcasting schedule.",
+                "x-ms-visibility": "important",
+                "parameters": [
+                    {
+                        "name": "channel_id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string",
+                        "enum": [
+                            "rai-1",
+                            "rai-2",
+                            "rai-3",
+                            "rai-4",
+                            "rai-5",
+                            "rai-gulp",
+                            "rai-movie",
+                            "rai-news-24",
+                            "rai-premium",
+                            "rai-scuola",
+                            "rai-sport",
+                            "rai-storia",
+                            "rai-yoyo"
+                        ],
+                        "x-ms-visibility": "important",
+                        "description": "Channel id",
+                        "x-ms-summary": "Channel id"
+                    },
+                    {
+                        "name": "day",
+                        "in": "path",
+                        "required": true,
+                        "type": "string",
+                        "description": "dd-MM-yyyy",
+                        "x-ms-summary": "Day",
+                        "x-ms-visibility": "important",
+                        "format": "date"
+                    }
+                ]
+            }
+        }
+    },
+    "definitions": {},
+    "parameters": {},
+    "responses": {},
+    "securityDefinitions": {},
+    "security": [],
+    "tags": []
+}
